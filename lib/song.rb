@@ -31,6 +31,13 @@ class Song
   end
   
   def self.genre_count
+    if @roster.empty?
+      @roster[grade] = [name]
+    elsif @roster.keys.include?(grade)
+      @roster[grade] << name
+    else
+      @roster[grade] = [name]
+    end
     @@genre_hash[]
   end
   
