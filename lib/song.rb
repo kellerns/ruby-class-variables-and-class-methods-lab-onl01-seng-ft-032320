@@ -13,6 +13,9 @@ class Song
   @genre = genre
   @@genres << genre
   @@artists << artist
+  
+  @@genre_hash = {}
+  @@artist_hash = {}
   end
   
   def self.count
@@ -28,7 +31,7 @@ class Song
   end
   
   def self.genre_count
-    
+    @@genre_hash[]
   end
   
   def self.artist_count
