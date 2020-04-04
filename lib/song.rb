@@ -1,5 +1,5 @@
 class Song
-  attr_accessor :name, :artists, :genres
+  attr_accessor :na:artists, :genres
   attr_writer :name 
   
   @@count = 0
