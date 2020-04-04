@@ -37,7 +37,7 @@ class Song
       elsif @@genre_hash.keys.include?(@@genres[i])
         @@genre_hash[@@genres[i]] << name
       else
-        @@genre_hash[genre[i]] = [i]
+        @@genre_hash[@@genres[i]] = [i]
       end
       i += 1
     end
