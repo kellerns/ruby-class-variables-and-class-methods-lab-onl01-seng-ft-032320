@@ -33,7 +33,7 @@ class Song
     i = 0
     while i < @genres.length
     if @@genre_hash.empty?
-      @@genre_hash[grade] = [name]
+      @@genre_hash[@genres] = [name]
     elsif @roster.keys.include?(grade)
       @roster[grade] << name
     else
