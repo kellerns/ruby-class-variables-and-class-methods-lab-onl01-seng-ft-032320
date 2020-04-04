@@ -32,14 +32,20 @@ class Song
   def self.genre_count
     i = 0
     while i < @genres.length
-    if @@genre_hash.empty?
-      @@genre_hash[@genres] = [name]
-    elsif @roster.keys.include?(grade)
-      @roster[grade] << name
-    else
-      @roster[grade] = [name]
+      if @@genre_hash.empty?
+        @@genre_hash[@genres[i]] = [i]
+      elsif @@genre_hash.keys.include?(@genres[i])
+        @@genre_hash[grade] << name
+      else
+        @@genre_hash[genre[i]] = [i]
+      end
+      i += 1
     end
-    @@genre_hash[]
+    count_hash = {}
+    @@genre_hash.each do |genre, number|
+      count_hash[genre] = number.count
+    end
+    count_hash
   end
   
   def self.artist_count
