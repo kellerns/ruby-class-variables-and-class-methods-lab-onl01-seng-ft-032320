@@ -7,6 +7,7 @@ class Song
   @@artists = []
   @@genre_hash = {}
   @@artist_hash = {}
+  
   def initialize(name, artist, genre)
   @@count += 1
   @name = name
@@ -14,8 +15,6 @@ class Song
   @genre = genre
   @@genres << genre
   @@artists << artist
-  
-  
   end
   
   def self.count
@@ -31,6 +30,8 @@ class Song
   end
   
   def self.genre_count
+    i = 0
+    while i < @genres.length
     if @@genre_hash.empty?
       @@genre_hash[grade] = [name]
     elsif @roster.keys.include?(grade)
