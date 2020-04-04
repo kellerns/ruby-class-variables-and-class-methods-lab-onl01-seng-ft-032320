@@ -49,7 +49,22 @@ class Song
   end
   
   def self.artist_count
-    
+    i = 0
+    while i < @@artists.length
+      if @@artist_hash.empty?
+        @@artist_hash[@@artists[i]] = [i]
+      elsif @@artist_hash.keys.include?(@@artists[i])
+        @@artist_hash[@@artists[i]] << name
+      else
+        @@artist_hash[@@artists[i]] = [i]
+      end
+      i += 1
+    end
+    count_hash = {}
+    @@artist_hash.each do |artist, number|
+      count_hash[artist] = number.count
+    end
+    count_hash
   end
 
 end
