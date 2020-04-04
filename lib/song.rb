@@ -31,7 +31,7 @@ class Song
   
   def self.genre_count
     i = 0
-    while i < @genres.length
+    while i < @@genres.length
       if @@genre_hash.empty?
         @@genre_hash[@genres[i]] = [i]
       elsif @@genre_hash.keys.include?(@genres[i])
