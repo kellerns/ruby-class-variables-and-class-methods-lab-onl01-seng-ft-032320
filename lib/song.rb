@@ -33,8 +33,8 @@ class Song
     i = 0
     while i < @@genres.length
       if @@genre_hash.empty?
-        @@genre_hash[@genres[i]] = [i]
-      elsif @@genre_hash.keys.include?(@genres[i])
+        @@genre_hash[@@genres[i]] = [i]
+      elsif @@genre_hash.keys.include?(@@genres[i])
         @@genre_hash[grade] << name
       else
         @@genre_hash[genre[i]] = [i]
